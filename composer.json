@@ -14,6 +14,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "hwi/oauth-bundle": "^1.0",
         "laravel/framework": "^7.0",
+        "laravel/helpers": "^1.2",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "php-http/guzzle6-adapter": "^2.0",
