@@ -1,4 +1,4 @@
-RewriteEngine On 
-RewriteCond %{HTTP_HOST} ^belic.consulting [NC] 
-RewriteCond %{HTTPS} off 
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^belic.consulting [NC]
+RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
