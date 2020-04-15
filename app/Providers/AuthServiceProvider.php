@@ -1,11 +1,11 @@
 <?php
-
 namespace App\Providers;
 
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
-use App\Answer;
-use App\Policies\AnswerPolicy;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use App\Question;
+use App\Policies\QuestionPolicy;
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -14,7 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-      Answer::class=>AnswerPolicy::class
+        Question::class => QuestionPolicy::class,
     ];
 
     /**
@@ -25,7 +25,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
         //
     }
 }
