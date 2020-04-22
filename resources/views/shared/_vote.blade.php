@@ -1,12 +1,12 @@
 @if ($model instanceof App\Question)
     @php
         $name = 'question';
-        $firstURISegment = 'questions';
+        $firstURISegment = 'public/questions';
     @endphp
 @elseif ($model instanceof App\Answer)
     @php
         $name = 'answer';
-        $firstURISegment = 'answers';
+        $firstURISegment = 'public/answers';
     @endphp
 @endif
 
@@ -38,10 +38,13 @@
         @csrf
         <input type="hidden" name="vote" value="-1">
     </form>
-
     @if ($model instanceof App\Question)
-        <favorite :question="{{ $model }}"></favorite>
+        @include ('shared._favorite', [
+            'model' => $model
+        ])
     @elseif ($model instanceof App\Answer)
-        <accept :answer="{{ $model }}"></accept>
+        @include ('shared._accept', [
+            'model' => $model
+        ])
     @endif
 </div>
