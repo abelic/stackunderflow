@@ -5,7 +5,7 @@
             @click.prevent="create">
             <i class="fas fa-check fa-2x"></i>
         </a>
-            <a v-if="accepted" title="The question owner accepted this answer as best answer"
+            <a v-if="accepted" title="The question Owner accepted this answer as best answer"
                 :class="classes">
                 <i class="fas fa-check fa-2x"></i>
             </a>
@@ -36,7 +36,7 @@ export default {
  },
   computed: {
     canAccept (){
-      return this.authorize('accept', this.answer);
+      return true;
     },
     accepted (){
       return !this.canAccept && this.isBest;
